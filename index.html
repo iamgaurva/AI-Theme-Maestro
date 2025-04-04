@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Theme Maestro - Interactive Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Tippy.js for tooltips -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <!-- D3.js for data visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="theme-default">
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="icon"><i class="fas fa-palette"></i></span>
+                <h1>AI Theme Maestro</h1>
+            </div>
+            <div class="theme-controls">
+                <button id="ai-theme-btn" class="pulse-animation" data-tippy-content="Let AI analyze and generate a custom theme for you">
+                    <i class="fas fa-magic"></i> 
+                    <span>AI Theme</span>
+                </button>
+                <div class="theme-selector">
+                    <button data-theme="theme-default" class="theme-btn active" data-tippy-content="A balanced light theme with blue accents">
+                        <span class="circle"></span>
+                        <span>Default</span>
+                    </button>
+                    <button data-theme="theme-dark" class="theme-btn" data-tippy-content="Modern dark mode with purple highlights">
+                        <span class="circle"></span>
+                        <span>Dark</span>
+                    </button>
+                    <button data-theme="theme-neon" class="theme-btn" data-tippy-content="Vibrant neon colors on dark background">
+                        <span class="circle"></span>
+                        <span>Neon</span>
+                    </button>
+                    <button data-theme="theme-pastel" class="theme-btn" data-tippy-content="Soft pastel colors for a gentle feel">
+                        <span class="circle"></span>
+                        <span>Pastel</span>
+                    </button>
+                    <button data-theme="theme-forest" class="theme-btn" data-tippy-content="Natural green tones inspired by forests">
+                        <span class="circle"></span>
+                        <span>Forest</span>
+                    </button>
+                </div>
+                <button id="toggle-mode" class="mode-toggle" data-tippy-content="Toggle between light and dark base mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+        
+        <main>
+            <section class="hero">
+                <div class="hero-content" data-scroll="fade-in">
+                    <h2 class="animated-text">Experience Dynamic Theme Switching</h2>
+                    <p>Watch as AI analyzes the interface and adapts colors, fonts, and styles in real-time with stunning transitions</p>
+                    <div class="hero-buttons">
+                        <button class="btn primary">Get Started</button>
+                        <button class="btn secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="theme-orb">
+                        <div class="orb-inner"></div>
+                        <div class="orb-particles"></div>
+                    </div>
+                    <div id="3d-globe-container"></div>
+                </div>
+            </section>
 
+            <section class="color-palette" data-scroll="slide-right">
+                <h2>Dynamic Color System</h2>
+                <div class="palette-container">
+                    <div class="color-swatch primary-swatch" data-tippy-content="Primary Color: Used for main interactive elements">
+                        <div class="color-info">
+                            <span class="color-name">Primary</span>
+                            <span class="color-value">#4a6cf7</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch secondary-swatch" data-tippy-content="Secondary Color: Used for accents and highlights">
+                        <div class="color-info">
+                            <span class="color-name">Secondary</span>
+                            <span class="color-value">#f772c9</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch accent-swatch" data-tippy-content="Accent Color: Used for special highlights">
+                        <div class="color-info">
+                            <span class="color-name">Accent</span>
+                            <span class="color-value">#6ce792</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch background-swatch" data-tippy-content="Background: Main page background">
+                        <div class="color-info">
+                            <span class="color-name">Background</span>
+                            <span class="color-value">#ffffff</span>
+                        </div>
+                    </div>
+                    <div class="color-swatch text-swatch" data-tippy-content="Text Color: Main content text">
+                        <div class="color-info">
+                            <span class="color-name">Text</span>
+                            <span class="color-value">#333333</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features" data-scroll="fade-up">
+                <h2>Features</h2>
+                <div class="feature-cards">
+                    <div class="card" data-scroll="scale-in" data-scroll-delay="0.1">
+                        <div class="card-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <h3>AI-Powered Themes</h3>
+                        <p>Machine learning algorithms analyze your preferences and create personalized themes.</p>
+                    </div>
+                    <div class="card" data-scroll="scale-in" data-scroll-delay="0.2">
+                        <div class="card-icon"><i class="fas fa-swatchbook"></i></div>
+                        <h3>Stunning Transitions</h3>
+                        <p>Smooth color and layout animations between theme changes for a seamless experience.</p>
+                    </div>
+                    <div class="card" data-scroll="scale-in" data-scroll-delay="0.3">
+                        <div class="card-icon"><i class="fas fa-sliders"></i></div>
+                        <h3>Custom Controls</h3>
+                        <p>Fine-tune your themes with adjustable controls for colors, fonts, and animations.</p>
+                    </div>
+                    <div class="card" data-scroll="scale-in" data-scroll-delay="0.4">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <h3>Developer Friendly</h3>
+                        <p>Easy integration with existing projects through our simple API and documentation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="data-visualization" data-scroll="fade-in">
+                <h2>Theme Usage Statistics</h2>
+                <div class="chart-container">
+                    <div id="theme-usage-chart"></div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: var(--primary-color)"></span>
+                            <span>Default Theme</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: var(--secondary-color)"></span>
+                            <span>Dark Theme</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: var(--accent-color)"></span>
+                            <span>Neon Theme</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #aaa"></span>
+                            <span>Other Themes</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="demo" data-scroll="fade-up">
+                <h2>See It In Action</h2>
+                <div class="demo-container">
+                    <div class="demo-panel" data-tippy-content="This panel shows a live preview of how UI elements adapt to the current theme">
+                        <div class="demo-header">
+                            <div class="demo-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="demo-title">Theme Preview</div>
+                        </div>
+                        <div class="demo-content">
+                            <div class="demo-card" data-scroll="slide-up" data-scroll-delay="0.1">
+                                <h4>Project Dashboard</h4>
+                                <div class="demo-progress">
+                                    <div class="progress-label">
+                                        <span>Progress</span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="demo-actions">
+                                    <button class="demo-btn">Details</button>
+                                    <button class="demo-btn outline">Share</button>
+                                </div>
+                            </div>
+                            <div class="demo-card" data-scroll="slide-up" data-scroll-delay="0.2">
+                                <h4>Team Activity</h4>
+                                <ul class="demo-list">
+                                    <li><span class="dot"></span> Design updated</li>
+                                    <li><span class="dot"></span> Frontend completed</li>
+                                    <li><span class="dot"></span> Testing phase</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="interactive-showcase" data-scroll="fade-in">
+                <h2>Interactive 3D Showcase</h2>
+                <div class="showcase-container">
+                    <div id="theme-showcase" class="showcase-3d"></div>
+                    <div class="showcase-info">
+                        <h3>Explore Theme Combinations</h3>
+                        <p>Rotate and interact with the 3D model to see how different theme elements combine.</p>
+                        <div class="showcase-controls">
+                            <button class="btn secondary" id="rotate-model">
+                                <i class="fas fa-sync"></i> Rotate
+                            </button>
+                            <button class="btn secondary" id="change-model-theme">
+                                <i class="fas fa-random"></i> Random Theme
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-palette"></i> AI Theme Maestro
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-tippy-content="Learn more about our project">About</a>
+                    <a href="#" data-tippy-content="Explore all features">Features</a>
+                    <a href="#" data-tippy-content="View pricing plans">Pricing</a>
+                    <a href="#" data-tippy-content="Get in touch with our team">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" data-tippy-content="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" data-tippy-content="Check our GitHub repository"><i class="fab fa-github"></i></a>
+                    <a href="#" data-tippy-content="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Theme Maestro. All rights reserved to Mr Kumar Gaurav.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="theme-transition-overlay"></div>
+    <div class="ai-thinking-modal">
+        <div class="ai-thinking-container">
+            <div class="ai-thinking-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="ai-thinking-text">
+                <h3>AI is analyzing...</h3>
+                <p>Creating your personalized theme based on visual elements</p>
+            </div>
+            <div class="ai-thinking-progress">
+                <div class="ai-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <!-- Tippy.js for tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Lottie for SVG animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+    
+    <!-- Main script -->
+    <script src="script.js"></script>
+</body>
+</html> 
